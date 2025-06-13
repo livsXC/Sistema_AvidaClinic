@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Avida</title>
+    <link rel="icon" href="static/logo-aba.png" type="image/png" sizes="96x96">
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="app-container">
+        
+        <header class="top-navbar">
+            <div class="logo-container">
+                <img src="static/logo.png" alt="Logo do App" class="logo-top" />
+                <span class="app-name">Avida</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><button class="menu-btn active" data-tab="menu">Visão Geral</button></li>
+                    <li><button class="menu-btn" data-tab="cadastro">Cadastro de Pacientes</button></li>
+                    <li><button class="menu-btn" data-tab="agendamentos">Agendamentos</button></li>
+                    <li><button class="menu-btn" data-tab="financeiro">Financeiro</button></li> 
+                    <li><button class="menu-btn" data-tab="contratos">Contratos</button></li>
+                </ul>
+            </nav>
+            <div class="user-area">
+                <i class="fas fa-user"></i><a href="#" class="login-link">Log In</a>
+            </div>
+        </header>
+
+        <main class="main-content"> 
+            <div id="menu" class="tab-content active">
+                <div class="dashboard-header">
+                    <h1 class="dashboard-title">Bem-vindo(a) Avida!</h1>
+                    <p class="dashboard-subtitle">Visão geral rápida das operações da sua clínica.</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card ticker-card">
+                        <h3 class="card-title"><i class="fas fa-bullhorn icon-info"></i> Avisos Importantes</h3>
+                        <div class="message-ticker">
+                            <p><strong>25/05/2024:</strong> Lembrete para atualização de software da recepção.</p>
+                            <p><strong>01/06/2024:</strong> Reunião da equipe na sexta-feira às 14h.</p>
+                            <p><strong>03/06/2024:</strong> Novo protocolo de segurança implementado.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="view-all-link">Ver Todos os Avisos <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card actions-card">
+                        <h3 class="card-title"><i class="fas fa-bolt icon-accent"></i> Ações Rápidas</h3>
+                        <div class="action-buttons-grid">
+                            <a href="#" class="action-btn-item">
+                                <i class="fas fa-user-plus icon-btn-lg"></i>
+                                <span>Novo Paciente</span>
+                            </a>
+                            <a href="#" class="action-btn-item">
+                                <i class="fas fa-calendar-plus icon-btn-lg"></i>
+                                <span>Novo Agendamento</span>
+                            </a>
+                            <a href="#" class="action-btn-item">
+                                <i class="fas fa-file-invoice-dollar icon-btn-lg"></i>
+                                <span>Registrar Pagamento</span>
+                            </a>
+                            <a href="#" class="action-btn-item">
+                                <i class="fas fa-comment-dots icon-btn-lg"></i>
+                                <span>Enviar Mensagem</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card metrics-card">
+                        <h3 class="card-title"><i class="fas fa-chart-line icon-primary"></i> Métricas Importantes</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <i class="fas fa-users metric-icon"></i>
+                                <p class="metric-value">1250</p>
+                                <span class="metric-label">Total de Pacientes</span>
+                            </div>
+                            <div class="metric-item">
+                                <i class="fas fa-calendar-check metric-icon"></i>
+                                <p class="metric-value">45</p>
+                                <span class="metric-label">Consultas Este Mês</span>
+                            </div>
+                            <div class="metric-item">
+                                <i class="fas fa-hand-holding-usd metric-icon"></i>
+                                <p class="metric-value">R$ 15.670</p>
+                                <span class="metric-label">Receita Este Mês</span>
+                            </div>
+                            <div class="metric-item">
+                                <i class="fas fa-clock metric-icon"></i>
+                                <p class="metric-value">5</p>
+                                <span class="metric-label">Agendamentos Hoje</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card activity-card">
+                        <h3 class="card-title"><i class="fas fa-history icon-secondary"></i> Atividade Recente</h3>
+                        <ul class="activity-list">
+                            <li><span class="activity-time">10:30</span> Novo agendamento: Maria Silva (Consulta)</li>
+                            <li><span class="activity-time">09:45</span> Paciente cadastrado: João Santos</li>
+                            <li><span class="activity-time">08:15</span> Pagamento recebido: R$ 250 (Carlos Pereira)</li>
+                            <li><span class="activity-time">Ontem</span> Exame solicitado: Ana Costa (Raio-X)</li>
+                            <li><span class="activity-time">Ontem</span> Prontuário atualizado: Pedro Almeida</li>
+                        </ul>
+                        <div class="card-footer">
+                            <a href="#" class="view-all-link">Ver Toda Atividade <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card appointments-today-card">
+                        <h3 class="card-title"><i class="fas fa-calendar-day icon-primary"></i> Agendamentos de Hoje</h3>
+                        <ul class="appointments-list">
+                            <li>
+                                <span class="appointment-time">09:00</span>
+                                <span class="appointment-patient">Dr. Silva - Maria A.</span>
+                                <span class="appointment-type">Consulta</span>
+                                <button class="action-icon-btn"><i class="fas fa-check-circle"></i></button>
+                            </li>
+                            <li>
+                                <span class="appointment-time">10:30</span>
+                                <span class="appointment-patient">Dra. Costa - João P.</span>
+                                <span class="appointment-type">Retorno</span>
+                                <button class="action-icon-btn"><i class="fas fa-check-circle"></i></button>
+                            </li>
+                            <li>
+                                <span class="appointment-time">11:00</span>
+                                <span class="appointment-patient">Dr. Souza - Ana L.</span>
+                                <span class="appointment-type">Exame</span>
+                                <button class="action-icon-btn"><i class="fas fa-check-circle"></i></button>
+                            </li>
+                        </ul>
+                        <div class="card-footer">
+                            <a href="#" class="view-all-link">Ver Todos Agendamentos <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cadastro" class="tab-content">
+                <header class="cabecalho-header">
+                    <h1><i class="fas fa-user-plus icon-primary"></i> Cadastro de Pacientes</h1>
+                </header>
+
+                <section class="cadastro-form-section card">
+                    <h2>Dados do Paciente</h2>
+                    <form id="cadastro-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="cadastro-nomePaciente">Nome Completo: *</label>
+                                <input type="text" id="cadastro-nomePaciente" name="nomePaciente" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cadastro-telefone">Telefone: *</label>
+                                <input type="tel" id="cadastro-telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cadastro-email">Email:</label>
+                                <input type="email" id="cadastro-email" name="email" placeholder="email@exemplo.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cadastro-cpf">CPF:</label>
+                                <input type="text" id="cadastro-cpf" name="cpf" placeholder="XXX.XXX.XXX-XX">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cadastro-rg">RG:</label>
+                                <input type="text" id="cadastro-rg" name="rg" placeholder="XX.XXX.XXX-X">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cadastro-dataNascimento">Data de Nascimento:</label>
+                                <input type="date" id="cadastro-dataNascimento" name="dataNascimento">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cadastro-sexo">Sexo:</label>
+                                <select id="cadastro-sexo" name="sexo">
+                                    <option value="">Selecione</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cadastro-endereco">Endereço:</label>
+                                <input type="text" id="cadastro-endereco" name="endereco" placeholder="Rua, Número, Bairro">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cadastro-cidade">Cidade:</label>
+                                <input type="text" id="cadastro-cidade" name="cidade">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cadastro-estado">Estado:</label>
+                                <input type="text" id="cadastro-estado" name="estado" placeholder="Ex: SP">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cadastro-cep">CEP:</label>
+                                <input type="text" id="cadastro-cep" name="cep" placeholder="XXXXX-XXX">
+                            </div>
+
+                            <div class="form-group full-width"> 
+                                <label for="cadastro-observacoes">Observações:</label>
+                                <textarea id="cadastro-observacoes" name="observacoes" rows="4" placeholder="Informações adicionais sobre o paciente, histórico médico relevante, etc."></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="primary-btn submit-btn"><i class="fas fa-save"></i> Cadastrar Paciente</button>
+                        <div id="cadastro-statusMessage" class="status-message"></div> 
+                    </form>
+                </section>
+
+                <section class="cadastro-list-section card">
+                    <h2><i class="fas fa-users icon-info"></i> Pacientes Cadastrados</h2>
+                    <div class="filter-controls">
+                        <input type="text" id="cadastro-searchPatient" placeholder="Buscar paciente por nome ou CPF..." class="search-input" />
+                    </div>
+                    <table class="cadastro-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Telefone</th>
+                                <th>Email</th>
+                                <th>CPF</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cadastro-patientTableBody">
+                        </tbody>
+                    </table>
+                    <p id="cadastro-noPacientesMessage" class="no-results-message" style="display: none;">Nenhum paciente encontrado.</p>
+                </section>
+            </div>
+            
+            <div id="agendamentos" class="tab-content">
+                <div class="agenda-tabs">
+                    <button class="menu-btn active" data-agenda-tab="agendamentos-futuros">Agendamentos Futuros</button>
+                    <button class="menu-btn" data-agenda-tab="historico-agendamentos">Histórico</button>
+                    <button class="menu-btn" data-agenda-tab="novo-agendamento">Novo Agendamento</button>
+                </div>
+
+                <div id="agendamentos-futuros" class="sub-tab-content active"> 
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-calendar-alt icon-info"></i> Próximos Agendamentos</h3>
+                        <div class="filter-controls">
+                            <input type="text" class="search-input" placeholder="Buscar agendamento...">
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Hora</th>
+                                    <th>Paciente</th>
+                                    <th>Médico</th>
+                                    <th>Tipo</th>
+                                    <th class="action-column">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>15/06/2025</td>
+                                    <td>10:00</td>
+                                    <td>Ana Lúcia</td>
+                                    <td>Dra. Beatriz</td>
+                                    <td>Consulta</td>
+                                    <td class="action-buttons">
+                                        <button title="Editar"><i class="fas fa-edit"></i></button>
+                                        <button title="Cancelar"><i class="fas fa-times"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>16/06/2025</td>
+                                    <td>14:30</td>
+                                    <td>Pedro Henrique</td>
+                                    <td>Dr. Carlos</td>
+                                    <td>Retorno</td>
+                                    <td class="action-buttons">
+                                        <button title="Editar"><i class="fas fa-edit"></i></button>
+                                        <button title="Cancelar"><i class="fas fa-times"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="no-results-message" style="display:none;">Nenhum agendamento futuro encontrado.</div>
+                        <div class="card-footer">
+                            <a href="#" class="view-all-link">Ver Todos <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="historico-agendamentos" class="sub-tab-content">
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-history icon-secondary"></i> Histórico de Agendamentos</h3>
+                        <p>Tabela de histórico de agendamentos virá aqui.</p>
+                        <div class="card-footer">
+                            <a href="#" class="view-all-link">Ver Todos <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="novo-agendamento" class="sub-tab-content">
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-calendar-plus icon-accent"></i> Criar Novo Agendamento</h3>
+                        <form id="novo-agendamento-form">
+                            <label for="pacienteAgendamento">Paciente:</label>
+                            <input type="text" id="pacienteAgendamento" name="pacienteAgendamento" placeholder="Buscar paciente..." required>
+
+                            <label for="dataAgendamento">Data:</label>
+                            <input type="date" id="dataAgendamento" name="dataAgendamento" required>
+
+                            <label for="horaAgendamento">Hora:</label>
+                            <input type="time" id="horaAgendamento" name="horaAgendamento" required>
+
+                            <label for="medicoAgendamento">Médico:</label>
+                            <select id="medicoAgendamento" name="medicoAgendamento" required>
+                                <option value="">Selecione um médico</option>
+                                <option value="dr_silva">Dr. João Silva</option>
+                                <option value="dra_costa">Dra. Maria Costa</option>
+                            </select>
+
+                            <label for="tipoAgendamento">Tipo de Agendamento:</label>
+                            <select id="tipoAgendamento" name="tipoAgendamento" required>
+                                <option value="">Selecione o tipo</option>
+                                <option value="consulta">Consulta</option>
+                                <option value="retorno">Retorno</option>
+                                <option value="exame">Exame</option>
+                                <option value="procedimento">Procedimento</option>
+                            </select>
+
+                            <label for="observacoesAgendamento">Observações:</label>
+                            <textarea id="observacoesAgendamento" name="observacoesAgendamento"></textarea>
+
+                            <button type="submit" class="primary-btn"><i class="fas fa-calendar-alt"></i> Agendar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="financeiro" class="tab-content">
+                <div class="financeiro-tabs">
+                    <button class="menu-btn active" data-financeiro-tab="visao-geral-financeira">Visão Geral</button>
+                    <button class="menu-btn" data-financeiro-tab="receitas">Receitas</button>
+                    <button class="menu-btn" data-financeiro-tab="despesas">Despesas</button>
+                    <button class="menu-btn" data-financeiro-tab="relatorios-financeiros">Relatórios</button>
+                </div>
+
+                <div id="visao-geral-financeira" class="sub-tab-content active">
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-chart-pie icon-accent"></i> Resumo Financeiro</h3>
+                        <div class="dashboard-metrics">
+                            <div class="metric-card">
+                                <h3>Receita Total (Mês)</h3>
+                                <p>R$ 15.670,00</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Despesa Total (Mês)</h3>
+                                <p>R$ 4.120,00</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Lucro (Mês)</h3>
+                                <p style="color: var(--accent-color);">R$ 11.550,00</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Saldo Atual</h3>
+                                <p style="color: var(--primary-color);">R$ 25.800,00</p>
+                            </div>
+                        </div>
+                        <div class="dashboard-charts">
+                            <div class="card chart-container">
+                                <canvas id="revenueExpenseChart"></canvas>
+                            </div>
+                            <div class="card chart-container">
+                                <canvas id="revenueByTypeChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="receitas" class="sub-tab-content">
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-plus-circle icon-primary"></i> Gerenciar Receitas</h3>
+                        <p>Tabela de receitas e formulário para adicionar virão aqui.</p>
+                    </div>
+                </div>
+
+                <div id="despesas" class="sub-tab-content">
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-minus-circle icon-secondary"></i> Gerenciar Despesas</h3>
+                        <p>Tabela de despesas e formulário para adicionar virão aqui.</p>
+                    </div>
+                </div>
+
+                <div id="relatorios-financeiros" class="sub-tab-content">
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-file-alt icon-info"></i> Relatórios Financeiros</h3>
+                        <p>Opções de relatórios financeiros virão aqui.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contratos" class="tab-content">
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-file-contract icon-accent"></i> Gerenciar Contratos</h3>
+                    <div class="upload-controls">
+                        <label for="fileUpload" class="custom-file-upload">
+                            <i class="fas fa-upload"></i> Upload de Contrato
+                        </label>
+                        <input type="file" id="fileUpload" class="file-input" accept=".pdf,.doc,.docx">
+                        <span class="upload-info" id="fileNameDisplay">Nenhum arquivo selecionado</span>
+                        <button class="primary-btn"><i class="fas fa-paper-plane"></i> Salvar Contrato</button>
+                    </div>
+
+                    <div class="filter-controls" style="margin-top: 20px;">
+                        <input type="text" class="search-input" placeholder="Buscar contrato...">
+                    </div>
+
+                    <table class="contratos-table">
+                        <thead>
+                            <tr>
+                                <th>Nome do Contrato</th>
+                                <th>Paciente/Cliente</th>
+                                <th>Data de Upload</th>
+                                <th>Status</th>
+                                <th class="action-column">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Contrato de Tratamento #001</td>
+                                <td>Maria Silva</td>
+                                <td>01/05/2025</td>
+                                <td>Ativo</td>
+                                <td class="action-buttons">
+                                    <button title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button title="Download"><i class="fas fa-download"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Termo de Consentimento #005</td>
+                                <td>João Pereira</td>
+                                <td>20/04/2025</td>
+                                <td>Concluído</td>
+                                <td class="action-buttons">
+                                    <button title="Visualizar"><i class="fas fa-eye"></i></button>
+                                    <button title="Download"><i class="fas fa-download"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="no-results-message" style="display:none;">Nenhum contrato encontrado.</div>
+                    <div class="card-footer">
+                        <a href="#" class="view-all-link">Ver Todos <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="rodape">
+            <p>&copy; 2024 Avida. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <i class="fas fa-heart"></i> para a sua gestão.</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="/static/js/script.js"></script>
+        
+    </body>
+</html>

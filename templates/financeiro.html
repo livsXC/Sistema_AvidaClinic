@@ -1,0 +1,110 @@
+<div id="financeiro financeiro-content-wrapper">
+    <header class="cabecalho-header">
+        <h1>Agendamento de Consultas</h1>
+        <p>Preencha os detalhes para agendar uma nova consulta e visualize os dias disponíveis.</p>
+    </header>
+    
+    <div class="financeiro-tabs-nav card">
+        <button class="menu-btn active" data-financeiro-tab="transacoes">
+            <i class="fas fa-money-bill-transfer"></i> Registro de Transações
+        </button>
+        <button class="menu-btn" data-financeiro-tab="dashboard">
+            <i class="fas fa-chart-line"></i> Dashboard Financeiro
+        </button>
+    </div>
+
+    <section id="financeiro-transacoes" class="financeiro-tab-content active card">
+        <h2><i class="fas fa-file-invoice-dollar"></i> Lançar Nova Transação</h2>
+        <form id="pagamentoForm">
+            <label for="pagamentoPaciente">Paciente:</label>
+            <input type="text" id="pagamentoPaciente" name="pagamentoPaciente" required>
+
+            <label for="pagamentoValor">Valor (R$):</label>
+            <input type="number" id="pagamentoValor" name="pagamentoValor" step="0.01" required>
+
+            <label for="pagamentoData">Data:</label>
+            <input type="date" id="pagamentoData" name="pagamentoData" required>
+
+            <label for="pagamentoHora">Hora:</label>
+            <input type="time" id="pagamentoHora" name="pagamentoHora" required>
+
+            <label for="pagamentoMetodo">Método de Pagamento:</label>
+            <select id="pagamentoMetodo" name="pagamentoMetodo" required>
+                <option value="">Selecione</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="cartao_credito">Cartão de Crédito</option>
+                <option value="cartao_debito">Cartão de Débito</option>
+                <option value="pix">PIX</option>
+                <option value="transferencia">Transferência Bancária</option>
+                <option value="boleto">Boleto</option>
+            </select>
+
+            <label for="pagamentoStatus">Status:</label>
+            <select id="pagamentoStatus" name="pagamentoStatus" required>
+                <option value="pendente">Pendente</option>
+                <option value="pago">Pago</option>
+                <option value="cancelado">Cancelado</option>
+            </select>
+
+            <label for="pagamentoDescricao" class="full-width">Descrição do Serviço:</label>
+            <input type="text" id="pagamentoDescricao" name="pagamentoDescricao" class="full-width" placeholder="Ex: Consulta Odontológica, Procedimento X">
+
+            <button type="submit" class="primary-btn"><i class="fas fa-plus-circle"></i> Registrar Lançamento</button>
+        </form>
+
+        <h2 style="margin-top: 30px;"><i class="fas fa-list-ul"></i> Histórico de Transações</h2>
+        <div class="filter-controls">
+            <input type="text" id="searchPagamento" placeholder="Buscar por paciente, descrição ou método..." class="search-input">
+        </div>
+        <table id="pagamentoTable" class="financeiro-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Paciente</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Método</th>
+                    <th>Status</th>
+                    <th>Descrição</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+        <p id="noPagamentosMessage" class="no-results-message" style="display: none;">Nenhum lançamento financeiro encontrado.</p>
+    </section>
+
+    <section id="financeiro-dashboard" class="financeiro-tab-content card">
+        <h2><i class="fas fa-tachometer-alt"></i> Visão Geral do Dashboard</h2>
+        <div class="dashboard-metrics">
+            <div class="metric-card">
+                <h3>Total Recebido</h3>
+                <p id="totalRecebido">R$ 0,00</p>
+            </div>
+            <div class="metric-card">
+                <h3>Total Pendente</h3>
+                <p id="totalPendente">R$ 0,00</p>
+            </div>
+            <div class="metric-card">
+                <h3>Mês Atual</h3>
+                <p>Maio/2025</p>
+            </div>
+        </div>
+
+        <div class="dashboard-charts">
+            <div class="chart-container card">
+                <h3>Faturamento Mensal (Últimos 6 meses)</h3>
+                <canvas id="faturamentoMensalChart"></canvas>
+            </div>
+            <div class="chart-container card">
+                <h3>Status de Pagamentos</h3>
+                <canvas id="pagamentoStatusChart"></canvas>
+            </div>
+        </div>
+
+            </div>
+        </div>
+    </section>
+</div>
